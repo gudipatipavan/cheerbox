@@ -6,59 +6,101 @@
   <title>CheerBox | One Stop Solutions for Gifts, Toys, Festive Needs & Decor</title>
   <link rel="icon" href="https://emojiapi.dev/api/v1/package/64.png" type="image/png">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 2rem; background: #fff8f0; color: #333; }
-    header { text-align: center; margin-bottom: 2rem; }
-    h1 { font-size: 2rem; margin: 0; }
-    .product { border: 1px solid #ccc; padding: 1rem; margin-bottom: 2rem; background: #fff; border-radius: 10px; }
-    .product img { max-width: 100%; height: auto; border-radius: 8px; }
-    .preview { margin-top: 1rem; max-height: 150px; }
-    button { background: #4CAF50; color: white; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer; }
-    #popup { display: none; position: fixed; top: 20px; right: 20px; background: #dff0d8; padding: 1rem; border: 1px solid #3c763d; border-radius: 5px; }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff8f0; color: #333; }
+    header { background: #ff6f61; padding: 1rem; text-align: center; color: white; }
+    nav { display: flex; justify-content: center; gap: 2rem; background: #fff3ec; padding: 1rem; }
+    nav a { color: #ff6f61; text-decoration: none; font-weight: bold; cursor: pointer; }
+    .tab-content { display: none; padding: 2rem; }
+    .tab-content.active { display: block; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; padding: 2rem; }
+    .card { background: white; border-radius: 10px; padding: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+    .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
+    .price { margin-top: 0.5rem; font-weight: bold; color: #444; }
+    footer { text-align: center; padding: 1rem; background: #ff6f61; color: white; margin-top: 2rem; }
   </style>
 </head>
 <body>
   <header>
     <h1>🎁 CheerBox</h1>
-    <p>One-stop Celebrations Spot for Toys, Gifts, Festive Needs & Decor!</p>
+    <p>One stop solutions for gifts, toys, festive needs & decor</p>
   </header>
 
-  <div class="product">
-    <h2>Sling Bag</h2>
-    <img src="https://via.placeholder.com/200" alt="Sling Bag">
-    <input type="file" accept="image/*" id="imageUpload">
-    <img id="imagePreview" class="preview" style="display:none;">
-    <br><br>
-    <a id="waLink" target="_blank">
-      <button onclick="orderOnWhatsApp()">Order on WhatsApp</button>
-    </a>
+  <nav>
+    <a onclick="showTab('home')">Home</a>
+    <a onclick="showTab('offers')">Live Offers</a>
+    <a onclick="showTab('contact')">Contact Us</a>
+  </nav>
+
+  <div id="home" class="tab-content active">
+    <div class="grid">
+      <!-- 10 Product Cards -->
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 1">
+        <div class="price">₹199</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 2">
+        <div class="price">₹249</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 3">
+        <div class="price">₹299</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 4">
+        <div class="price">₹349</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 5">
+        <div class="price">₹399</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 6">
+        <div class="price">₹449</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 7">
+        <div class="price">₹499</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 8">
+        <div class="price">₹549</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 9">
+        <div class="price">₹599</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 10">
+        <div class="price">₹649</div>
+      </div>
+    </div>
   </div>
 
-  <div id="popup">🎉 Thanks! We’ve received your order on WhatsApp.</div>
+  <div id="offers" class="tab-content">
+    <h2>🔥 Live Offers</h2>
+    <p>Buy 2, Get 1 Free on all gift items! Limited time only.</p>
+    <p>Flat 20% off on festive decor this week!</p>
+  </div>
+
+  <div id="contact" class="tab-content">
+    <h2>📞 Contact Us</h2>
+    <p>WhatsApp: <a href="https://wa.me/8008636274">+91 99999 99999</a></p>
+    <p>Email: support@cheerbox.store</p>
+    <p>Instagram: <a href="https://instagram.com/cheerbox.store">@cheerbox.store</a></p>
+  </div>
+
+  <footer>
+    &copy; 2025 CheerBox. All rights reserved.
+  </footer>
 
   <script>
-    const imageUpload = document.getElementById('imageUpload');
-    const imagePreview = document.getElementById('imagePreview');
-
-    imageUpload.addEventListener('change', () => {
-      const file = imageUpload.files[0];
-      if (file) {
-        imagePreview.src = URL.createObjectURL(file);
-        imagePreview.style.display = 'block';
-      }
-    });
-
-    function orderOnWhatsApp() {
-      const message = `Hi CheerBox! I'd like to order a Sling Bag.`;
-      const url = `https://wa.me/8008616274?text=${encodeURIComponent(message)}`;
-      document.getElementById('waLink').href = url;
-      showPopup();
-    }
-
-    function showPopup() {
-      const popup = document.getElementById('popup');
-      popup.style.display = 'block';
-      setTimeout(() => { popup.style.display = 'none'; }, 3000);
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
     }
   </script>
 </body>
 </html>
+

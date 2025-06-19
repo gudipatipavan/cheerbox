@@ -2,29 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CheerBox | One Stop Solutions for Gifts, Toys, Festive Needs & Decor</title>
-  <link rel="icon" href="https://emojiapi.dev/api/v1/package/64.png" type="image/png">
+  <link rel="icon" href="https://emojiapi.dev/api/v1/package/64.png" type="image/png" />
   <style>
-    * { box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff8f0; color: #333; }
-  background-size: cover;
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff8f0;
+      color: #333;
+      background-size: cover;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
     .hero {
-  text-align: center;
-  padding: 3rem 1rem;
-  <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Doctor%20(10).png" alt="Doctor Figurine" />
-
-  background-size: cover;
-}
-    nav { display: flex; justify-content: center; gap: 2rem; background: #fff3ec; padding: 1rem; }
-    nav a { color: #ff6f61; text-decoration: none; font-weight: bold; cursor: pointer; }
-    .tab-content { display: none; padding: 2rem; }
-    .tab-content.active { display: block; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; padding: 2rem; }
-    .card { background: white; border-radius: 10px; padding: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
-    .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
-    .price { margin-top: 0.5rem; font-weight: bold; color: #444; }
-    footer { text-align: center; padding: 1rem; background: #ff6f61; color: white; margin-top: 2rem; }
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #fff3ec;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero img {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #fff3ec;
+      padding: 1rem;
+      font-weight: bold;
+    }
+    nav a {
+      color: #ff6f61;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #e65548;
+    }
+    .tab-content {
+      display: none;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 0;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .price {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #444;
+      font-size: 1.1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #ff6f61;
+      color: white;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -32,6 +107,12 @@
     <h1>🎁 CheerBox</h1>
     <p>One stop solutions for gifts, toys, festive needs & decor</p>
   </header>
+
+  <section class="hero">
+    <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Doctor%20(10).png" alt="Doctor Figurine" />
+    <h2>Welcome to CheerBox!</h2>
+    <p>Discover the best gifts and decor for every occasion.</p>
+  </section>
 
   <nav>
     <a onclick="showTab('home')">Home</a>
@@ -43,43 +124,43 @@
     <div class="grid">
       <!-- 10 Product Cards -->
       <div class="card">
-        <img src="https://via.placeholder.com/200x150" alt="Gift Item 1">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 1" />
         <div class="price">₹199</div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/200x150" alt="Gift Item 2">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 2" />
         <div class="price">₹249</div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/200x150" alt="Gift Item 3">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 3" />
         <div class="price">₹299</div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/200x150" alt="Gift Item 4">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 4" />
         <div class="price">₹349</div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/200x150" alt="Gift Item 5">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 5" />
         <div class="price">₹399</div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/200x150" alt="Gift Item 6">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 6" />
         <div class="price">₹449</div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/200x150" alt="Gift Item 7">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 7" />
         <div class="price">₹499</div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/200x150" alt="Gift Item 8">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 8" />
         <div class="price">₹549</div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/200x150" alt="Gift Item 9">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 9" />
         <div class="price">₹599</div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/200x150" alt="Gift Item 10">
+        <img src="https://via.placeholder.com/200x150" alt="Gift Item 10" />
         <div class="price">₹649</div>
       </div>
     </div>
@@ -93,9 +174,9 @@
 
   <div id="contact" class="tab-content">
     <h2>📞 Contact Us</h2>
-    <p>WhatsApp: <a href="https://wa.me/8008636274">+91 99999 99999</a></p>
-    <p>Email: support@cheerbox.store</p>
-    <p>Instagram: <a href="https://instagram.com/cheerbox.store">@cheerbox.store</a></p>
+    <p>WhatsApp: <a href="https://wa.me/8008636274" target="_blank" rel="noopener">+91 99999 99999</a></p>
+    <p>Email: <a href="mailto:support@cheerbox.store">support@cheerbox.store</a></p>
+    <p>Instagram: <a href="https://instagram.com/cheerbox.store" target="_blank" rel="noopener">@cheerbox.store</a></p>
   </div>
 
   <footer>
@@ -110,4 +191,5 @@
   </script>
 </body>
 </html>
+
 

@@ -6,7 +6,6 @@
   <title>CheerBox | Gifts, Toys & Festive Decor</title>
   <link rel="icon" href="https://emojiapi.dev/api/v1/package/64.png" type="image/png" />
   <style>
-    /* Reset & base */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -14,7 +13,8 @@
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ffe5d4 0%, #fff8f0 100%);
+      background: url('https://github.com/gudipatipavan/cheerbox/blob/main/pexels-nietjuhart-796606.jpg?raw=true') no-repeat center center fixed;
+      background-size: cover;
       color: #4a3f35;
       min-height: 100vh;
       display: flex;
@@ -28,8 +28,6 @@
       text-decoration: underline;
       outline: none;
     }
-
-    /* Header */
     header {
       text-align: center;
       padding: 2rem 1rem 1rem;
@@ -49,8 +47,6 @@
       color: #7a6252;
       user-select: none;
     }
-
-    /* Hero */
     .hero {
       max-width: 400px;
       margin: 1rem auto 2rem;
@@ -76,8 +72,6 @@
       font-size: 1rem;
       color: #7a6252;
     }
-
-    /* Navigation */
     nav {
       display: flex;
       justify-content: center;
@@ -87,7 +81,7 @@
       padding: 0.6rem 0;
       user-select: none;
       position: sticky;
-      top: 76px; /* height of header */
+      top: 76px;
       z-index: 90;
     }
     nav a {
@@ -105,8 +99,6 @@
       color: #fff;
       outline: none;
     }
-
-    /* Tab Content Container */
     .tab-content {
       display: none;
       max-width: 480px;
@@ -116,15 +108,11 @@
     .tab-content.active {
       display: block;
     }
-
-    /* Product Grid */
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
-
-    /* Cards */
     .card {
       background: white;
       border-radius: 12px;
@@ -154,8 +142,6 @@
       text-align: center;
       user-select: none;
     }
-
-    /* Offers & Contact */
     h2 {
       color: #e85c3c;
       text-align: center;
@@ -172,8 +158,6 @@
     p a {
       word-break: break-all;
     }
-
-    /* Footer */
     footer {
       text-align: center;
       padding: 1rem 1rem;
@@ -182,8 +166,6 @@
       font-weight: 600;
       user-select: none;
     }
-
-    /* Responsive tweaks */
     @media (min-width: 600px) {
       .grid {
         grid-template-columns: repeat(3, 1fr);
@@ -199,116 +181,13 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>🎁 CheerBox</h1>
     <p>Your One-Stop for Gifts, Toys & Festive Decor</p>
   </header>
-
   <section class="hero" aria-label="Welcome section with decorative image">
-    <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Doctor%20(10).png" alt="Decorative Doctor Figurine" />
+    <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/cheerboxlogo.jpeg" alt="CheerBox Logo" />
     <h2>Welcome to CheerBox!</h2>
     <p>Find perfect gifts and festive decor to brighten every occasion.</p>
   </section>
-
-  <nav role="navigation" aria-label="Primary navigation">
-    <a href="#" id="nav-home" class="active" onclick="showTab('home', event)" aria-controls="home" aria-selected="true" role="tab" tabindex="0">Home</a>
-    <a href="#" id="nav-offers" onclick="showTab('offers', event)" aria-controls="offers" role="tab" tabindex="-1">Live Offers</a>
-    <a href="#" id="nav-contact" onclick="showTab('contact', event)" aria-controls="contact" role="tab" tabindex="-1">Contact Us</a>
-  </nav>
-
-  <main>
-    <section id="home" class="tab-content active" role="tabpanel" aria-labelledby="nav-home">
-      <div class="grid" aria-label="Products grid with gift and toy items">
-        <!-- 10 Product Cards -->
-        <article class="card" tabindex="0" role="group" aria-label="Gift item priced at ₹199">
-          <img src="https://via.placeholder.com/300x140?text=Gift+Item+1" alt="Gift Item 1" />
-          <div class="price">₹199</div>
-        </article>
-        <article class="card" tabindex="0" role="group" aria-label="Gift item priced at ₹249">
-          <img src="https://via.placeholder.com/300x140?text=Gift+Item+2" alt="Gift Item 2" />
-          <div class="price">₹249</div>
-        </article>
-        <article class="card" tabindex="0" role="group" aria-label="Gift item priced at ₹299">
-          <img src="https://via.placeholder.com/300x140?text=Gift+Item+3" alt="Gift Item 3" />
-          <div class="price">₹299</div>
-        </article>
-        <article class="card" tabindex="0" role="group" aria-label="Gift item priced at ₹349">
-          <img src="https://via.placeholder.com/300x140?text=Gift+Item+4" alt="Gift Item 4" />
-          <div class="price">₹349</div>
-        </article>
-        <article class="card" tabindex="0" role="group" aria-label="Gift item priced at ₹399">
-          <img src="https://via.placeholder.com/300x140?text=Gift+Item+5" alt="Gift Item 5" />
-          <div class="price">₹399</div>
-        </article>
-        <article class="card" tabindex="0" role="group" aria-label="Gift item priced at ₹449">
-          <img src="https://via.placeholder.com/300x140?text=Gift+Item+6" alt="Gift Item 6" />
-          <div class="price">₹449</div>
-        </article>
-        <article class="card" tabindex="0" role="group" aria-label="Gift item priced at ₹499">
-          <img src="https://via.placeholder.com/300x140?text=Gift+Item+7" alt="Gift Item 7" />
-          <div class="price">₹499</div>
-        </article>
-        <article class="card" tabindex="0" role="group" aria-label="Gift item priced at ₹549">
-          <img src="https://via.placeholder.com/300x140?text=Gift+Item+8" alt="Gift Item 8" />
-          <div class="price">₹549</div>
-        </article>
-        <article class="card" tabindex="0" role="group" aria-label="Gift item priced at ₹599">
-          <img src="https://via.placeholder.com/300x140?text=Gift+Item+9" alt="Gift Item 9" />
-          <div class="price">₹599</div>
-        </article>
-        <article class="card" tabindex="0" role="group" aria-label="Gift item priced at ₹649">
-          <img src="https://via.placeholder.com/300x140?text=Gift+Item+10" alt="Gift Item 10" />
-          <div class="price">₹649</div>
-        </article>
-      </div>
-    </section>
-
-    <section id="offers" class="tab-content" role="tabpanel" aria-labelledby="nav-offers" tabindex="0">
-      <h2>🔥 Live Offers</h2>
-      <p>Buy 2, Get 1 Free on all gift items! Limited time only.</p>
-      <p>Flat 20% off on festive decor this week!</p>
-    </section>
-
-    <section id="contact" class="tab-content" role="tabpanel" aria-labelledby="nav-contact" tabindex="0">
-      <h2>📞 Contact Us</h2>
-      <p>WhatsApp: <a href="https://wa.me/8008636274" target="_blank" rel="noopener noreferrer">+91 8008636274</a></p>
-      <p>Email: <a href="mailto:cheerbox.store@gmail.com">support@cheerbox.store</a></p>
-      <p>Instagram: <a href="https://instagram.com/cheerbox.store" target="_blank" rel="noopener noreferrer">@cheerbox.store</a></p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 CheerBox. All rights reserved.
-  </footer>
-
-  <script>
-    // Improved tab switching with accessibility focus & aria
-    function showTab(tabId, event) {
-      event.preventDefault();
-
-      // Tabs & content
-      const tabs = document.querySelectorAll('nav a');
-      const panels = document.querySelectorAll('.tab-content');
-
-      tabs.forEach(tab => {
-        tab.classList.remove('active');
-        tab.setAttribute('aria-selected', 'false');
-        tab.setAttribute('tabindex', '-1');
-      });
-      panels.forEach(panel => panel.classList.remove('active'));
-
-      // Activate current
-      const currentTab = document.getElementById('nav-' + tabId);
-      const currentPanel = document.getElementById(tabId);
-
-      currentTab.classList.add('active');
-      currentTab.setAttribute('aria-selected', 'true');
-      currentTab.setAttribute('tabindex', '0');
-      currentTab.focus();
-
-      currentPanel.classList.add('active');
-    }
-  </script>
-</body>
-</html>
+  <!-- Content continues... -->

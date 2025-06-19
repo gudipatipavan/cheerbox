@@ -6,89 +6,119 @@
   <title>CheerBox | Gifts, Toys & Festive Decor</title>
   <link rel="icon" href="https://emojiapi.dev/api/v1/package/64.png" type="image/png" />
   <style>
+    :root {
+      --primary-color: #ff6b6b;
+      --accent-color: #ffe66d;
+      --bg-overlay: rgba(255, 255, 255, 0.95);
+      --font-main: 'Poppins', sans-serif;
+    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: var(--font-main);
       margin: 0;
       background: url('https://github.com/gudipatipavan/cheerbox/blob/main/pexels-nietjuhart-796606.jpg?raw=true') no-repeat center center fixed;
       background-size: cover;
-      color: #4a3f35;
+      color: #333;
     }
     header, .hero, nav, .tab-content, footer {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: var(--bg-overlay);
       margin: auto;
-      max-width: 960px;
+      max-width: 1024px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
     header {
       text-align: center;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 2rem 1rem 1rem;
     }
     header h1 {
+      font-size: 2.5rem;
       margin: 0;
+      color: var(--primary-color);
     }
     .hero {
       text-align: center;
       padding: 1rem;
     }
     .hero img {
-      max-width: 120px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 140px;
+      border-radius: 50%;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1rem;
     }
     nav {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      padding: 0.5rem;
+      gap: 2rem;
+      padding: 1rem;
+      background: var(--primary-color);
+      border-radius: 0 0 16px 16px;
     }
     nav a {
-      font-weight: bold;
-      color: #e85c3c;
+      color: white;
       text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    nav a:hover {
+      background: var(--accent-color);
+      color: #000;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
-      padding: 1rem;
+      padding: 2rem;
     }
     .card {
       background: white;
-      border-radius: 10px;
-      padding: 0.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      padding: 0.75rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
       text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
     }
     .card img {
       width: 100%;
-      height: 120px;
+      height: 140px;
       object-fit: cover;
-      border-radius: 6px;
+      border-radius: 8px;
     }
     .price {
       margin-top: 0.5rem;
       font-weight: bold;
-      color: #e85c3c;
+      color: var(--primary-color);
     }
     h2 {
       text-align: center;
-      color: #d1493b;
-      margin-top: 2rem;
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      padding-top: 1rem;
     }
     footer {
       text-align: center;
       padding: 1rem;
-      background: #e85c3c;
+      background: var(--primary-color);
       color: white;
+      border-radius: 16px;
       margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>🎁 CheerBox</h1>
-    <p>Your One-Stop for Gifts, Toys & Festive Decor</p>
+    <p>Your One-Stop Celebration Stop for Gifts, Toys & Festive Decor</p>
   </header>
 
   <section class="hero">
@@ -106,7 +136,6 @@
   <main>
     <section class="tab-content active">
       <div class="grid">
-        <!-- 10 Product Cards -->
         <div class="card"><img src="https://via.placeholder.com/300x140?text=Gift+Item+1" alt=""><div class="price">₹199</div></div>
         <div class="card"><img src="https://via.placeholder.com/300x140?text=Gift+Item+2" alt=""><div class="price">₹249</div></div>
         <div class="card"><img src="https://via.placeholder.com/300x140?text=Gift+Item+3" alt=""><div class="price">₹299</div></div>
@@ -141,6 +170,6 @@
   <a href="https://wa.me/918008636274?text=I%20need%20to%20order%20a%20product" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 12px 16px; border-radius: 50px; text-align: center; font-size: 16px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 999; text-decoration: none;">
     💬 Chat on WhatsApp
   </a>
-
 </body>
 </html>
+

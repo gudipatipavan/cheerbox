@@ -19,7 +19,7 @@
       background-size: cover;
       color: #333;
     }
-    header, .hero, nav, .tab-content, footer {
+    header, nav, .tab-content, footer {
       background-color: var(--bg-overlay);
       margin: auto;
       max-width: 1024px;
@@ -35,15 +35,9 @@
       margin: 0;
       color: var(--primary-color);
     }
-    .hero {
-      text-align: center;
-      padding: 1rem;
-    }
-    .hero img {
-      width: 140px;
-      border-radius: 50%;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      margin-bottom: 1rem;
+    header h1 img {
+      height: 48px;
+      vertical-align: middle;
     }
     nav {
       display: flex;
@@ -87,9 +81,9 @@
       height: 140px;
       object-fit: cover;
       border-radius: 8px;
+      margin-bottom: 0.5rem;
     }
     .price {
-      margin-top: 0.5rem;
       font-weight: bold;
       color: var(--primary-color);
     }
@@ -121,15 +115,9 @@
 </head>
 <body>
   <header>
-    <h1>🎁 CheerBox</h1>
+    <h1><img src="https://github.com/gudipatipavan/cheerbox/blob/main/logo.jpeg?raw=true" alt="CheerBox Logo"></h1>
     <p>Your One-Stop for Gifts, Toys & Festive Decor</p>
   </header>
-
-  <section class="hero">
-    <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/cheerboxlogo.jpeg" alt="CheerBox Logo" />
-    <h2>Welcome to CheerBox!</h2>
-    <p>Find perfect gifts and festive decor to brighten every occasion.</p>
-  </section>
 
   <nav>
     <a href="#">Home</a>
@@ -139,26 +127,7 @@
 
   <main>
     <section class="tab-content active">
-      <div class="grid">
-        <!-- Dynamic Cards Start -->
-        <div class="card">
-          <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Lock%20Dairy.jpeg" alt="Lock Dairy">
-          <div class="price">₹199</div>
-          <div class="code">CB001</div>
-        </div>
-        <div class="card">
-          <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Fancy%20Dairy.jpeg" alt="Fancy Dairy">
-          <div class="price">₹250</div>
-          <div class="code">CB002</div>
-        </div>
-        <div class="card">
-          <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Box%20Lock%20Dairy.jpeg" alt="Box Lock Dairy">
-          <div class="price">₹199</div>
-          <div class="code">CB003</div>
-        </div>
-        <!-- Add all 31 products similarly with proper grouping and image sliders for same products -->
-        <!-- For now this is a sample. Full product data will be inserted with JS or template. -->
-      </div>
+      <div class="grid" id="productGrid"></div>
     </section>
   </main>
 
@@ -170,5 +139,85 @@
   <a href="https://wa.me/918008616274?text=I%20need%20to%20order%20a%20product" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 12px 16px; border-radius: 50px; text-align: center; font-size: 16px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 999; text-decoration: none;">
     💬 Chat on WhatsApp
   </a>
-</body>
-</html>
+<script>
+  const products = [
+    { id: "CB001", name: "Lock Dairy", price: 199, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Lock%20Dairy.jpeg"] },
+    { id: "CB002", name: "Fancy Dairy", price: 250, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Fancy%20Dairy.jpeg"] },
+    { id: "CB003", name: "Box Lock Dairy", price: 199, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Box%20Lock%20Dairy.jpeg"] },
+    { id: "CB007", name: "Mosquito Repellent Spinner Wrist Band", price: 120, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Mosquito%20Repellent%20Spinner%20Wrist%20Band.jpeg"] },
+    { id: "CB008", name: "Mosquito Repellent Round Wrist Band", price: 99, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Mosquito%20Repellent%20Round%20Wrist%20Band.jpeg"] },
+    { id: "CB009", name: "DIY Diamond Painting", price: 49, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/DIY%20Diamond%20Painting.jpeg"] },
+    { id: "CB010", name: "Macarom Photoframe Diamond Painting", price: 70, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Macarom%20Photoframe%20Diamond%20Painting.jpeg"] },
+    { id: "CB012", name: "Candy Flower", price: 100, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/candy%20flower.jpeg"] },
+    { id: "CB013", name: "Sling Bags", price: 300, urls: [
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/sling%20bag%20Frozen.jpeg",
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/sling%20bag%20Ironman.jpeg",
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/sling%20bag%20Kitty.jpeg",
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/sling%20bag%20Space.jpeg"
+    ] },
+    { id: "CB014", name: "3D cartoon Hard Pencil Case - Big", price: 200, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/3D%20cartoon%20Hard%20Pencil%20Case%20-%20Big%20Ironman.jpeg"] },
+    { id: "CB015", name: "3D cartoon Hard Pencil Case - Classic", price: 250, urls: [
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/3D%20cartoon%20Hard%20Pencil%20Case%20-%20Classic%20unicorn.jpeg",
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/3D%20cartoon%20Hard%20Pencil%20Case%20-%20Classic%20Captain%20america.jpeg"
+    ] },
+    { id: "CB016", name: "3D cartoon Hard Pencil Case - Small", price: 149, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/3D%20cartoon%20Hard%20Pencil%20Case%20-Small.jpeg"] },
+    { id: "CB017", name: "Nail Art", price: 69, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Nail%20Art.jpeg"] },
+    { id: "CB018", name: "School Bags", price: 350, urls: [
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/School%20Bag%20My%20Melody.jpeg",
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/School%20Bag%20Sofia.jpeg",
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Spiderman%20bag%20sold%20out.png",
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/School%20Bag%20Spiderman.jpeg"
+    ] },
+    { id: "CB019", name: "Happy Learning Stationery Set", price: 99, urls: [
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Happy%20Learning%20Stationery%20Set-%20Blue.jpeg",
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Happy%20Learning%20Stationery%20Set-Pink.jpeg"
+    ] },
+    { id: "CB021", name: "DIY Drawing Set", price: 99, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/DIY%20Drawing%20Set.jpeg"] },
+    { id: "CB024", name: "Peggy Bank", price: 199, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Peggy%20Bank.jpeg"] },
+    { id: "CB025", name: "Nauty Bear Water bottle", price: 249, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/bear%20waterbottle.jpeg"] },
+    { id: "CB026", name: "Fresh Kitty Water bottle", price: 149, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/fresh%20waterbottle.jpeg"] },
+    { id: "CB027", name: "Rainbow Water bottle", price: 169, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/colourwaterbottle.jpeg"] },
+    { id: "CB029", name: "Synthetic Book Cover", price: 99, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Synthetic%20Book%20Cover.jpeg"] },
+    { id: "CB033", name: "Book Stickers/labels", price: 15, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Book%20Stickerslabels.jpeg"] },
+    { id: "CB034", name: "2 in 1 use Double Step Lunch Box", price: 120, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/2%20in%201%20luch%20box%20sold%20out.png"] },
+    { id: "CB035", name: "Thermal Lunch Bags", price: 145, urls: [
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Thermal%20Lunch%20Bag.jpeg",
+      "https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Thermal%20Lunch%20Bags.jpeg"
+    ] },
+    { id: "CB036", name: "Apsara Exam Pads", price: 70, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Apsara%20Exam%20Pads.jpeg"] },
+    { id: "CB037", name: "Disposable Tube Paper Soap in Flavour Design", price: 50, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Disposable%20Tube%20Paper%20Soap%20in%20Flavour%20Design.jpg"] },
+    { id: "CB038", name: "Kids Avenger Watch", price: 149, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Kids%20Avenger%20Watch.jpeg"] },
+    { id: "CB039", name: "Kids Batman Watch", price: 149, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Kids%20Batman%20Watch.jpeg"] },
+    { id: "CB040", name: "Kids Digital Smart Army Watch", price: 199, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Kids%20Digital%20Smart%20Army%20watch.jpeg"] },
+    { id: "CB041", name: "Soft Toys", price: 99, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/Soft%20Toys.jpeg"] },
+    { id: "CB042", name: "6-in-1 Pattern Roller Linear Color Pen", price: 129, urls: ["https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/pattern.png"] }
+  ];
+
+  const container = document.getElementById('productGrid');
+  products.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const slider = document.createElement('div');
+    slider.className = 'slider';
+    p.urls.forEach(url => {
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = p.name;
+      slider.appendChild(img);
+    });
+
+    const price = document.createElement('div');
+    price.className = 'price';
+    price.textContent = `₹${p.price}`;
+
+    const code = document.createElement('div');
+    code.className = 'code';
+    code.textContent = p.id;
+
+    card.appendChild(slider);
+    card.appendChild(price);
+    card.appendChild(code);
+    container.appendChild(card);
+  });
+</script>

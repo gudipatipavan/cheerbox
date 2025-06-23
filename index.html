@@ -117,8 +117,9 @@
         text-align: center;
       }
       nav {
-        flex-direction: column;
-        gap: 0.75rem;
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
       }
       .grid {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -128,7 +129,7 @@
   </style>
   <script>
     const allProducts = [
-      { id: 'CB001', name: 'Lock Dairy', price: 199, image: 'Lock%20Dairy.jpeg' },
+            { id: 'CB001', name: 'Lock Dairy', price: 199, image: 'Lock%20Dairy.jpeg' },
       { id: 'CB002', name: 'Fancy Dairy', price: 250, image: 'Fancy%20Dairy.jpeg' },
       { id: 'CB003', name: 'Box Lock Dairy', price: 199, image: 'Box%20Lock%20Dairy.jpeg' },
       { id: 'CB007', name: 'Mosquito Repellent Spinner Wrist Band', price: 120, image: 'Mosquito%20Repellent%20Spinner%20Wrist%20Band.jpeg' },
@@ -169,6 +170,7 @@
       { id: 'CB040', name: 'Kids Stylish Jigshaw Watch', price: 199, image: 'Kids%20Digital%20Smart%20Army%20watch.jpeg' },
       { id: 'CB041', name: 'Soft Toys', price: 99, image: 'Soft%20Toys.jpeg' },
       { id: 'CB042', name: 'Patterned Liner Color Pens (Pack of 6)', price: 129, image: 'pattern.jpeg' }
+
     ];
 
     function renderProducts(containerId, products) {

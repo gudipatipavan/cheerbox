@@ -123,6 +123,15 @@
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       }
     }
+    <nav>
+    <a onclick="showTab('home')">Home</a>
+    <a onclick="showTab('offers')">Live Offers</a>
+    <a onclick="showTab('contact')">Contact Us</a>
+  </nav>
+
+  <div id="home" class="tab-content active">
+    <div class="grid">
+  
   </style>
   <script>
     const products = [
@@ -185,7 +194,7 @@
 </head>
 <body>
   <header>
-    <h1><img src="https://github.com/gudipatipavan/cheerbox/blob/main/logonew.png?raw=true" alt="CheerBox Logo"></h1>
+    <h1><img src="https://github.com/gudipatipavan/cheerbox/blob/main/newlogonew.jpeg?raw=true" alt="CheerBox Logo"></h1>
     <p>One-Stop Celebrations Spot for Toys, Gifts, Festive Needs & Decor</p>
   </header>
 
@@ -213,11 +222,18 @@
   }
 </style>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#">Contact Us</a>
-  <a href="#">Live Offers</a>
-</nav>
+    <div id="Live Offers" class="tab-content">
+    <h2>🔥 Live Offers</h2>
+    <p>Buy 2, Get 1 Free on all gift items! Limited time only.</p>
+    <p>Flat 20% off on festive decor this week!</p>
+  </div>
+
+  <div id="contact" class="tab-content">
+    <h2>📞 Contact Us</h2>
+    <p>WhatsApp: <a href="https://wa.me/8008636274" target="_blank" rel="noopener">+91 99999 99999</a></p>
+    <p>Email: <a href="mailto:support@cheerbox.store">support@cheerbox.store</a></p>
+    <p>Instagram: <a href="https://instagram.com/cheerbox.store" target="_blank" rel="noopener">@cheerbox.store</a></p>
+  </div>
 
 
   <main>

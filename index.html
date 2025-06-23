@@ -47,13 +47,13 @@
       vertical-align: middle;
     }
     nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem;
       background: var(--primary-color);
-      border-radius: 0 0 16px 16px;
+      display: flex;
+      justify-content: space-around;
+      padding: 0.75rem 0.5rem;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
@@ -102,6 +102,8 @@
     }
     footer {
       display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 1rem;
       background: var(--primary-color);
       color: white;
@@ -122,9 +124,10 @@
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       }
     }
+    .hidden { display: none; }
   </style>
   <script>
-    const products = [
+    const allProducts = [
       { id: 'CB001', name: 'Lock Dairy', price: 199, image: 'Lock%20Dairy.jpeg' },
       { id: 'CB002', name: 'Fancy Dairy', price: 250, image: 'Fancy%20Dairy.jpeg' },
       { id: 'CB003', name: 'Box Lock Dairy', price: 199, image: 'Box%20Lock%20Dairy.jpeg' },
@@ -168,17 +171,24 @@
       { id: 'CB042', name: 'Patterned Liner Color Pens (Pack of 6)', price: 129, image: 'pattern.jpeg' }
     ];
 
-    window.onload = () => {
-      const grid = document.querySelector('.grid');
+    function renderProducts(containerId, products) {
+      const grid = document.getElementById(containerId);
       grid.innerHTML = products.map(p => `
         <div class="card">
-          <div class="slider">
-            <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/${p.image}" onclick="window.open(this.src)" />
-          </div>
+          <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/${p.image}" onclick="window.open(this.src)" />
           <div class="price">₹${p.price}</div>
           <div class="code">${p.id} ${p.name}</div>
         </div>
       `).join('');
+    }
+
+    window.onload = () => {
+      renderProducts('homeProducts', allProducts);
+    }
+
+    function showTab(tab) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.getElementById(tab).classList.remove('hidden');
     }
   </script>
 </head>
@@ -188,34 +198,19 @@
     <p>One-Stop Celebrations Spot for Toys, Gifts, Festive Needs & Decor</p>
   </header>
 
- <style>
-  nav {
-   
-    background: #ff6b6b;
-    display: flex;
-    justify-content: space-around;
-    padding: 0.75rem 0.5rem;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
- }
+  <nav>
+    <a href="#" onclick="showTab('home')">Home</a>
+    <a href="#" onclick="showTab('contact')">Contact Us</a>
+  </nav>
 
-  @media (max-width: 480px) {
-    nav a {
-      font-size: 0.85rem;
-      padding: 0.5rem 0.3rem;
-    }
-  }
-</style>
+  <main>
+    <section id="home" class="tab-content">
+      <div id="homeProducts" class="grid"></div>
+    </section>
 
-<nav>
-  <a href="#">Home</a>
-</nav>
- <main>
-    <section class="tab-content active">
-      <div class="grid">
-        <!-- Product Cards Loaded Dynamically -->
-      </div>
+    <section id="contact" class="tab-content hidden" style="padding: 1.5rem; text-align: center;">
+      <h2>Contact Us</h2>
+      <p>📧 Email: <a href="mailto:mycheerboxstore@gmail.com">mycheerboxstore@gmail.com</a></p>
     </section>
   </main>
 

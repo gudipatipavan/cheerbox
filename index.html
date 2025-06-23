@@ -20,7 +20,6 @@
     }
     body {
       font-family: var(--font-main);
-      background: url('https://github.com/gudipatipavan/cheerbox/blob/main/pexels-nietjuhart-796606.jpg?raw=true') no-repeat center center fixed;
       background-size: cover;
       color: #333;
       line-height: 1.6;
@@ -44,7 +43,7 @@
       color: var(--primary-color);
     }
     header h1 img {
-      height: 48px;
+      height: 148px;
       vertical-align: middle;
     }
     nav {
@@ -123,15 +122,6 @@
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       }
     }
-    <nav>
-    <a onclick="showTab('home')">Home</a>
-    <a onclick="showTab('offers')">Live Offers</a>
-    <a onclick="showTab('contact')">Contact Us</a>
-  </nav>
-
-  <div id="home" class="tab-content active">
-    <div class="grid">
-  
   </style>
   <script>
     const products = [
@@ -142,7 +132,7 @@
       { id: 'CB008', name: 'Mosquito Repellent Round Wrist Band', price: 99, image: 'Mosquito%20Repellent%20Round%20Wrist%20Band.jpeg' },
       { id: 'CB009', name: 'DIY Diamond Painting', price: 49, image: 'DIY%20Diamond%20Painting.jpeg' },
       { id: 'CB010', name: 'Macaron Photoframe Diamond Painting', price: 70, image: 'Macarom%20Photoframe%20Diamond%20Painting.jpeg' },
-      { id: 'CB012', name: 'Candy Flower', price: 100, image: 'candy%20flower.jpeg' },
+      { id: 'CB012', name: 'Candy Flower', price: 149, image: 'candy%20flower.jpeg' },
       { id: 'CB013', name: 'Cool & comfy kids crossbody sling bag Frozen', price: 300, image: 'sling%20bag%20Frozen.jpeg' },
        { id: 'CB013', name: 'Cool & comfy kids crossbody sling bag Dinosaur', price: 300, image: 'sling%20bag%20dinosaur.jpg' },
        { id: 'CB013', name: 'Cool & comfy kids crossbody sling bag Kitty', price: 300, image: 'sling%20bag%20Kitty.jpeg' },
@@ -153,10 +143,10 @@
       { id: 'CB015', name: '3D cartoon Hard Pencil Case - Classic(Unicorn)', price: 250, image: '3D%20cartoon%20Hard%20Pencil%20Case%20-%20Classic%20unicorn.jpeg' },
       { id: 'CB015', name: '3D cartoon Hard Pencil Case - Classic(Captain America)', price: 250, image: '3D%20cartoon%20Hard%20Pencil%20Case%20-%20Classic%20Captain%20america.jpeg' },
       { id: 'CB016', name: '3D cartoon Hard Pencil Case - Small', price: 149, image: '3D%20cartoon%20Hard%20Pencil%20Case%20-Small.jpeg' },
-      { id: 'CB017', name: 'Nail Art Beads Set', price: 69, image: 'Nail%20Art.jpeg' },
-      { id: 'CB018', name: 'School Bags My Melody', price: 350, image: 'School%20Bag%20My%20Melody.jpeg' },
-       { id: 'CB018', name: 'School Bags', price: 350, image: 'School%20Bag%20Sofia.jpeg' },
-       { id: 'CB018', name: 'School Bags', price: 350, image: 'School%20Bag%20Spiderman.jpeg' },
+      { id: 'CB017', name: 'Nail Art Beads Set', price: 99, image: 'Nail%20Art.jpeg' },
+      { id: 'CB018', name: 'School Bag My Melody', price: 350, image: 'School%20Bag%20My%20Melody.jpeg' },
+       { id: 'CB018', name: 'School Bag Sofia', price: 350, image: 'School%20Bag%20Sofia.jpeg' },
+       { id: 'CB018', name: 'School Bag Spiderman', price: 350, image: 'School%20Bag%20Spiderman.jpeg' },
       { id: 'CB019', name: 'Happy Learning Stationery Set Pink', price: 99, image: 'Happy%20Learning%20Stationery%20Set-Pink.jpeg' },
       { id: 'CB019', name: 'Happy Learning Stationery Set Blue', price: 99, image: 'Happy%20Learning%20Stationery%20Set-%20Blue.jpeg' },
       { id: 'CB042', name: 'Princess Stationery Set', price: 170, image: 'pinkstationery%20set.png' },
@@ -194,7 +184,7 @@
 </head>
 <body>
   <header>
-    <h1><img src="https://github.com/gudipatipavan/cheerbox/blob/main/newlogonew.jpeg?raw=true" alt="CheerBox Logo"></h1>
+    <h1><img src="https://github.com/gudipatipavan/cheerbox/blob/main/logonew.png?raw=true" alt="CheerBox Logo"></h1>
     <p>One-Stop Celebrations Spot for Toys, Gifts, Festive Needs & Decor</p>
   </header>
 
@@ -208,11 +198,7 @@
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
-
- 
-
-
-  }
+ }
 
   @media (max-width: 480px) {
     nav a {
@@ -222,21 +208,10 @@
   }
 </style>
 
-    <div id="Live Offers" class="tab-content">
-    <h2>🔥 Live Offers</h2>
-    <p>Buy 2, Get 1 Free on all gift items! Limited time only.</p>
-    <p>Flat 20% off on festive decor this week!</p>
-  </div>
-
-  <div id="contact" class="tab-content">
-    <h2>📞 Contact Us</h2>
-    <p>WhatsApp: <a href="https://wa.me/8008636274" target="_blank" rel="noopener">+91 99999 99999</a></p>
-    <p>Email: <a href="mailto:support@cheerbox.store">support@cheerbox.store</a></p>
-    <p>Instagram: <a href="https://instagram.com/cheerbox.store" target="_blank" rel="noopener">@cheerbox.store</a></p>
-  </div>
-
-
-  <main>
+<nav>
+  <a href="#">Home</a>
+</nav>
+ <main>
     <section class="tab-content active">
       <div class="grid">
         <!-- Product Cards Loaded Dynamically -->

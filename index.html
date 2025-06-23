@@ -34,17 +34,18 @@
     header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
+      justify-content: flex-start;
+      padding: 0.5rem 1rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
-    header h1 {
-      font-size: 2rem;
-      color: var(--primary-color);
+    header img {
+      height: 80px;
     }
-    header h1 img {
-      height: 148px;
-      vertical-align: middle;
+    header p {
+      font-size: 1rem;
+      color: var(--primary-color);
+      font-weight: 600;
     }
     nav {
       background: var(--primary-color);
@@ -112,9 +113,9 @@
     }
     @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1rem;
       }
       nav {
         flex-direction: row;
@@ -129,7 +130,7 @@
   </style>
   <script>
     const allProducts = [
-            { id: 'CB001', name: 'Lock Dairy', price: 199, image: 'Lock%20Dairy.jpeg' },
+                  { id: 'CB001', name: 'Lock Dairy', price: 199, image: 'Lock%20Dairy.jpeg' },
       { id: 'CB002', name: 'Fancy Dairy', price: 250, image: 'Fancy%20Dairy.jpeg' },
       { id: 'CB003', name: 'Box Lock Dairy', price: 199, image: 'Box%20Lock%20Dairy.jpeg' },
       { id: 'CB007', name: 'Mosquito Repellent Spinner Wrist Band', price: 120, image: 'Mosquito%20Repellent%20Spinner%20Wrist%20Band.jpeg' },
@@ -196,13 +197,13 @@
 </head>
 <body>
   <header>
-    <h1><img src="https://github.com/gudipatipavan/cheerbox/blob/main/logonew.png?raw=true" alt="CheerBox Logo"></h1>
+    <img src="https://github.com/gudipatipavan/cheerbox/blob/main/logonew.png?raw=true" alt="CheerBox Logo">
     <p>One-Stop Celebrations Spot for Toys, Gifts, Festive Needs & Decor</p>
   </header>
 
   <nav>
     <a href="#" onclick="showTab('home')">Home</a>
-    <a href="#" onclick="showTab('contact')">Contact Us</a>
+    <a href="#" onclick="showTab('contact')">Contact US</a>
   </nav>
 
   <main>
@@ -211,8 +212,9 @@
     </section>
 
     <section id="contact" class="tab-content hidden" style="padding: 1.5rem; text-align: center;">
-      <h2>Contact Us</h2>
+      <h2>Contact US</h2>
       <p>📧 Email: <a href="mailto:mycheerboxstore@gmail.com">mycheerboxstore@gmail.com</a></p>
+      <p><strong>⭐ Order now & Pickup your order in 5 Minutes!</strong></p>
     </section>
   </main>
 

@@ -37,15 +37,17 @@
       justify-content: flex-start;
       padding: 0.5rem 1rem;
       gap: 1rem;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
     header img {
-      height: 240px;
+      height: 200px;
+      max-width: 100%;
     }
     header p {
       font-size: 1rem;
       color: var(--primary-color);
       font-weight: 600;
+      flex: 1;
     }
     nav {
       background: var(--primary-color);
@@ -115,7 +117,12 @@
       header {
         flex-direction: row;
         justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
         gap: 1rem;
+      }
+      header img {
+        height: 160px;
       }
       nav {
         flex-direction: row;
@@ -130,7 +137,7 @@
   </style>
   <script>
     const allProducts = [
-                  { id: 'CB001', name: 'Lock Dairy', price: 199, image: 'Lock%20Dairy.jpeg' },
+      { id: 'CB001', name: 'Lock Dairy', price: 199, image: 'Lock%20Dairy.jpeg' },
       { id: 'CB002', name: 'Fancy Dairy', price: 250, image: 'Fancy%20Dairy.jpeg' },
       { id: 'CB003', name: 'Box Lock Dairy', price: 199, image: 'Box%20Lock%20Dairy.jpeg' },
       { id: 'CB007', name: 'Mosquito Repellent Spinner Wrist Band', price: 120, image: 'Mosquito%20Repellent%20Spinner%20Wrist%20Band.jpeg' },
@@ -214,7 +221,7 @@
     <section id="contact" class="tab-content hidden" style="padding: 1.5rem; text-align: center;">
       <h2>Contact US</h2>
       <p>📧 Email: <a href="mailto:mycheerboxstore@gmail.com">mycheerboxstore@gmail.com</a></p>
-      <p><strong>⭐ Order now & Pickup your order in 5 Minutes!</strong></p>
+      <p><strong>✨🎁Fast Pickup! Order via WhatsApp & collect in 5 mins!✨</strong></p>
     </section>
   </main>
 

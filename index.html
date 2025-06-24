@@ -113,19 +113,29 @@ header .tagline {
     .hidden {
       display: none;
     }
-    @media (max-width: 360px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-  header .tagline {
-    text-align: center;
-    font-size: 0.85rem;
-  }
+   @media (max-width: 768px) {
+header {
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+flex-wrap: nowrap;
+gap: 1rem;
 }
-
-  </style>
-  <script>
+header img {
+height: 160px;
+}
+nav {
+flex-direction: row;
+gap: 0.5rem;
+justify-content: center;
+}
+.grid {
+grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+}
+.hidden { display: none; }
+</style>
+<script>
     const allProducts = [
   { id: 'CB001', name: 'Lock Dairy', price: "199", image: 'Lock%20Dairy.jpeg' },
   { id: 'CB002', name: 'Fancy Dairy', price: "250", image: 'Fancy%20Dairy.jpeg' },

@@ -194,7 +194,7 @@
 
     function renderProducts(containerId, products) {
       const grid = document.getElementById(containerId);
-      grid.innerHTML = products.map(p => `
+      grid.innerHTML = products.map(p =>
         <div class="card">
           <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/${p.image}" onclick="window.open(this.src)" />
           <div class="price">₹${p.price}</div>

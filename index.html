@@ -25,31 +25,29 @@
       line-height: 1.6;
     }
     header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  background-color: var(--bg-overlay);
-  border-radius: 12px;
-  margin: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  flex-wrap: wrap;
-}
-
-header .logo {
-  height: 88px;
-  width: 88px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-header .tagline {
-  font-size: 0.95rem;
-  color: var(--primary-color);
-  font-weight: 600;
-  flex: 1;
-  line-height: 1.4;
-}
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      background-color: var(--bg-overlay);
+      border-radius: 12px;
+      margin: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+    header .logo {
+      height: 88px;
+      width: 88px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    header .tagline {
+      font-size: 0.95rem;
+      color: var(--primary-color);
+      font-weight: 600;
+      flex: 1;
+      line-height: 1.4;
+    }
     nav {
       display: flex;
       justify-content: space-around;
@@ -84,6 +82,7 @@ header .tagline {
       padding: 0.5rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: center;
+      position: relative;
     }
     .card img {
       width: 100%;
@@ -96,6 +95,24 @@ header .tagline {
       font-weight: bold;
       color: var(--primary-color);
       font-size: 0.9rem;
+    }
+    .original-price {
+      text-decoration: line-through;
+      color: #888;
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+    }
+    .badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: var(--primary-color);
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .code {
       font-size: 0.75rem;
@@ -113,29 +130,18 @@ header .tagline {
     .hidden {
       display: none;
     }
-   @media (max-width: 768px) {
-header {
-flex-direction: row;
-justify-content: flex-start;
-align-items: center;
-flex-wrap: nowrap;
-gap: 1rem;
-}
-header img {
-height: 90px;
-}
-nav {
-flex-direction: row;
-gap: 0.5rem;
-justify-content: center;
-}
-.grid {
-grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-}
-}
-.hidden { display: none; }
-</style>
-<script>
+    @media (max-width: 360px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+      header .tagline {
+        text-align: center;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+  <script>
     const allProducts = [
 { id: 'CB057A', name: 'BPA Free Stainless Steel Food Grade Lunch Box - Frozen Design', price: "299/1Piece", image: 'drozentifin.jpeg' },
 { id: 'CB057B', name: 'BPA Free Stainless Steel Food Grade Lunch Box - Disney Princess Design', price: "299/1Piece", image: 'pricetiffin.jpeg' },
@@ -194,7 +200,7 @@ grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 { id: 'CB061', name: 'Binocular - Pocket Size Folding Telescope', price: "179/1Piece", image: 'binacular.jpeg' },
 { id: 'CB062', name: 'Magnifying Glass Straight Shank 40mm', price: "99/1Piece", image: 'magnifier.jpeg' },
 { id: 'CB066', name: 'Squishy Cat Paw Toy - Stress Relief Slime', price: "149", image: 'paw.jpeg' },
-  { id: 'CB012', name: 'Candy Flower', price: "149", image: 'candy.jpeg' },
+{ id: 'CB012', name: 'Candy Flower', price: "112", originalPrice: "149", image: 'candy.jpeg' },
   { id: 'CB042', name: 'Patterned Liner Color Pens (Pack of 6)', price: "129", image: 'pattern.jpeg' },
   { id: 'CB043', name: 'Princess Stationery Set', price: "170", image: 'pinkstationery%20set.png' },
   { id: 'CB007', name: 'Mosquito Repellent Spinner Wrist Band', price: "120/1Piece", image: 'Mosquito%20Repellent%20Spinner%20Wrist%20Band.jpeg' },
@@ -239,13 +245,16 @@ grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   { id: 'CB055', name: 'Balloon Dot Glue & Arch Strip - Party Balloon Decoration', price: "49/1Piece", image: 'Balloon%20Dot%20Glue%20%26%20Arch%20Strip%20-%20Party%20Balloon%20Decoration.jpeg' }
 ];
 
-
     function renderProducts(containerId, products) {
       const grid = document.getElementById(containerId);
       grid.innerHTML = products.map(p => `
         <div class="card">
+          ${p.originalPrice ? `<div class="badge">21% OFF</div>` : ''}
           <img src="https://raw.githubusercontent.com/gudipatipavan/cheerbox/main/${p.image}" alt="${p.name}" onclick="window.open(this.src)" />
-          <div class="price">₹${p.price}</div>
+          <div class="price">
+            ₹${p.price}
+            ${p.originalPrice ? `<span class="original-price">₹${p.originalPrice}</span>` : ''}
+          </div>
           <div class="code">${p.id} - ${p.name}</div>
         </div>
       `).join('');
@@ -264,13 +273,13 @@ grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 <body>
 
   <header>
-    <img src="https://github.com/gudipatipavan/cheerbox/blob/main/logonew.png?raw=true" alt="CheerBox Logo" />
-    <p>One-Stop Celebrations Spot for Toys, Gifts, Festive Needs & Decor</p>
+    <img src="https://github.com/gudipatipavan/cheerbox/blob/main/logonew.png?raw=true" alt="CheerBox Logo" class="logo" />
+    <span class="tagline">One-Stop Celebrations Spot for Toys, Gifts, Festive Needs & Decor</span>
   </header>
 
   <nav>
     <a href="#" onclick="showTab('home')">Home</a>
-    <a href="#" onclick="showTab('contact')">Contact US</a>
+    <a href="#" onclick="showTab('contact')">Contact</a>
   </nav>
 
   <main>
@@ -279,7 +288,7 @@ grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     </section>
 
     <section id="contact" class="tab-content hidden" style="text-align: center; padding: 1.5rem;">
-      <h2>Contact US</h2>
+      <h2>Contact Us</h2>
       <p>📧 <a href="mailto:mycheerboxstore@gmail.com">mycheerboxstore@gmail.com</a></p>
       <p>📱 <strong>Fast Pickup! WhatsApp your order & collect in 5 mins!</strong></p>
     </section>
